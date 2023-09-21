@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul,
+ol,
+menu {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+    display: inline-block;
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+span:hover {
+    color: greenyellow;
+}
+
+h3:hover {
+    color: greenyellow;
+}
+
+
+/* palette colori */
+
+:root {
+    --darkblue:#080B12;
+    --blue: #141922;
+    --dark-grey:#282828;
+    --light:#FFFFFF;
+}
+
+/* Debug */
+
+.debug #app {
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.debug .app-container {
+    border: 1px solid orange;
+    
+}
+
+.debug .main-container {
+    border: 1px solid purple;
+    padding: 20px;
+}
+
+.debug .sidebar {
+    padding: 20px;
+}
+
+.debug .toolbar {
+    background-color: var(--dark-grey);
+    
+}
+
+
+/* Utilities */
+.display-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.just-between {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.d-none {
+    display: none;
+}
+
+.border-bottom {
+    border-bottom: 1px solid grey;
+}
+
+/* main container */
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: var(--blue);
+}
+
+.sidebar {
+    overflow: hidden;
+    background-color: var(--darkblue);
+    padding: 10px;
+}
+
+.toolbar {
+    height: auto; 
+}
+
+
+/* Toolbar */
+
+.toolbar {
+    background-color: var(--dark-grey);
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.toolbar .toolbar-content {
+    align-items: center;
+}
+
+.icon-img {
+    max-width: 25px;
+}
+
+.text-tool {
+    font-size: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.icon-tool {
+    color: white;
+    font-size: 10px;
+}
+
+.icon-tools-right {
+    padding: 10px;
+}
+
+.player-elements {
+    width: 50%;
+}
+
+.icons-container {
+    color: var(--light);
+    gap: 10px;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.player-bar-container {
+    color: var(--light);
+    font-size: 10px;
+    padding: 5px 0;
+    align-items: center;
+    gap: 5px;
+}
+
+.player-bar {
+    position: relative;
+    flex-grow: 1;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.radius {
+    border-radius: 3px;
+    height: 3px;
+}
+
+.player-bar-empty {
+    background-color: grey;
+}
+
+.player-bar-full {
+    position: absolute;
+    width: 25%;
+    background-color: var(--light);
+}
+
+.player-bar2 {
+    align-self: center;
+}
+
+.player-icon-container {
+    flex-basis: 150px;
+}
+
+.time-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 22px;
+    background-color: white;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player-bar:hover .time-circle {
+    display: inline-block;
+}
+
+.player-bar:hover .player-bar-full {
+    background-color: greenyellow;
+}
+
+/* Sidebar */
+.logo-spotify {
+    max-width: 20px;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list-sidebar {
+    width: 28px;
+}
+
+
+.logo-small {
+    width: 20px;
+}
+
+.logo-big {
+    width: 100px;
+}
+
+.menu-sidebar {
+    display: flex;
+    align-items: center;
+}
+
+.text-menu {
+    color: white;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.playlist-text {
+    color: white;
+    margin-top: 40px;
+}
+
+.margin-bottom-logo {
+    margin-bottom: 20px;
+}
+
+.icon-list-menu {
+    color: grey;
+    display: flex;
+}
+
+.icon-cross {
+    font-size: 40px;
+}
+
+.text-list-menu-special {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.list-menu {
+    color: grey;
+}
+
+.name-playlist {
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.text-install {
+    color: grey;
+    white-space: nowrap;   
+}
+
+.text-account {
+    color: white;
+    white-space: nowrap;
+}
+
+.install-content {
+    margin-bottom: 10px;
+}
+
+.install-container::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 1px;
+    background-color: grey;
+    margin-bottom: 20px;
+}
+
+.list-sidebar-bottom img {
+    width: 28px;   
+}
+
+.list-sidebar .menu-sidebar {
+    position: relative;
+}
+
+.list-sidebar .menu-sidebar.active::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 10%;
+    background-color: greenyellow;
+    top: 0;
+    left: -10px;
+}
+
+/* main container */
+
+.main-container {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.button {
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 0 18px;
+    margin-left: 170px;  
+    border: 1px solid white;
+}
+
+.categories {
+    color: grey;
+    text-transform: uppercase;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.titles {
+    margin-bottom: 20px;
+    padding-top: 150px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.played {
+    font-size: 28px;
+    color: white;
+}
+
+/* cards */
+
+
+
+.col {
+    flex-basis: 50%;
+}
+
+.row > [class^='col'] {
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 10px;    
+}
+
+.title-card {
+    color: white;
+    text-align: center;
+}
+
+.card-hover {
+    position: relative;
+}
+
+.middle.middle-hidden {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    transition: opacity 1s;
+    z-index: -1;
+    color: white;  
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover .middle.middle-hidden {
+    opacity: 1;
+    z-index: 1;
+}
+
+.icon-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.subtitle {
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+}
+
+.subtitle-suggestions {
+    color: grey;
+    font-size: 10px;
+}
+
+.content-categories {
+    overflow: auto;
+    height: 100%;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 639px) {
+    .sidebar {
+        width: 180px;
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .icon-tool-item  { 
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+    .player-icon-container {
+        width: 220px;
+    }
+
+    .d-none {
+        display: inline-block;
+    }
+
+    .logo-small {
+        display: none;
+    }
+
+    .col {
+        flex-basis: calc((100% / 12) *3);
+    }
+
+}
